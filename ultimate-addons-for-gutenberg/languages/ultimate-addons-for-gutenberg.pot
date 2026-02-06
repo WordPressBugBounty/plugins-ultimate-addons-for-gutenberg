@@ -1,15 +1,15 @@
-# Copyright (C) 2025 Brainstorm Force
+# Copyright (C) 2026 Brainstorm Force
 # This file is distributed under the same license as the Spectra plugin.
 msgid ""
 msgstr ""
-"Project-Id-Version: Spectra 2.19.9\n"
+"Project-Id-Version: Spectra 2.19.19\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/ultimate-addons-for-gutenberg\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2025-04-30T13:22:25+00:00\n"
+"POT-Creation-Date: 2026-01-29T10:22:39+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.8.1\n"
 "X-Domain: ultimate-addons-for-gutenberg\n"
@@ -22,7 +22,7 @@ msgstr ""
 #: admin-core/inc/admin-menu.php:385
 #: admin-core/inc/admin-menu.php:396
 #: admin-core/inc/admin-menu.php:503
-#: classes/class-uagb-init-blocks.php:813
+#: classes/class-uagb-init-blocks.php:951
 #: classes/class-uagb-nps-notice.php:91
 msgid "Spectra"
 msgstr ""
@@ -41,12 +41,12 @@ msgid "Brainstorm Force"
 msgstr ""
 
 #: admin-core/ajax/ajax-errors.php:82
-#: lib/bsf-analytics/modules/deactivation-survey/classes/class-deactivation-survey-feedback.php:224
+#: lib/bsf-analytics/modules/deactivation-survey/classes/class-deactivation-survey-feedback.php:229
 msgid "Sorry, you are not allowed to do this operation."
 msgstr ""
 
 #: admin-core/ajax/ajax-errors.php:83
-#: lib/bsf-analytics/modules/deactivation-survey/classes/class-deactivation-survey-feedback.php:237
+#: lib/bsf-analytics/modules/deactivation-survey/classes/class-deactivation-survey-feedback.php:242
 msgid "Nonce validation failed"
 msgstr ""
 
@@ -54,58 +54,121 @@ msgstr ""
 msgid "Sorry, something went wrong."
 msgstr ""
 
-#: admin-core/ajax/common-settings.php:165
-#: admin-core/ajax/common-settings.php:755
-#: classes/class-uagb-init-blocks.php:548
+#: admin-core/ajax/common-settings.php:168
+#: admin-core/ajax/common-settings.php:1075
+#: classes/class-uagb-init-blocks.php:686
 msgid "Successfully saved data!"
 msgstr ""
 
-#: admin-core/ajax/common-settings.php:181
-#: classes/class-uagb-init-blocks.php:1395
+#: admin-core/ajax/common-settings.php:184
+#: classes/class-uagb-init-blocks.php:1533
 msgid "No post data found!"
 msgstr ""
 
-#: admin-core/ajax/common-settings.php:217
+#: admin-core/ajax/common-settings.php:220
 msgid "Plugin Successfully Activated"
 msgstr ""
 
+#: admin-core/ajax/common-settings.php:717
+msgid "Plugin version not defined."
+msgstr ""
+
+#: admin-core/ajax/common-settings.php:737
+#: admin-core/ajax/common-settings.php:747
+msgid "Unable to check for beta updates."
+msgstr ""
+
+#. Translators: %1$s is the beta version number, %2$s is the current version.
+#: admin-core/ajax/common-settings.php:777
+msgid "Beta version %1$s is available (current: %2$s)."
+msgstr ""
+
+#: admin-core/ajax/common-settings.php:788
+#: admin-core/assets/build/dashboard-app.js:7
+msgid "You are running the latest version."
+msgstr ""
+
+#: admin-core/ajax/common-settings.php:807
+#: admin-core/ajax/common-settings.php:891
+msgid "Plugin identifier not defined."
+msgstr ""
+
+#: admin-core/ajax/common-settings.php:832
 #: admin-core/ajax/common-settings.php:849
+#: admin-core/ajax/common-settings.php:872
+msgid "No updates available."
+msgstr ""
+
+#. Translators: %s is the new version number.
+#: admin-core/ajax/common-settings.php:863
+msgid "Update available: %s"
+msgstr ""
+
+#: admin-core/ajax/common-settings.php:900
+msgid "You do not have permission to update plugins."
+msgstr ""
+
+#: admin-core/ajax/common-settings.php:924
+#: admin-core/ajax/common-settings.php:933
+msgid "No updates available to install."
+msgstr ""
+
+#. Translators: %s is the error message.
+#: admin-core/ajax/common-settings.php:962
+msgid "Update failed: %s"
+msgstr ""
+
+#: admin-core/ajax/common-settings.php:970
+msgid "Update failed. Please try again or update manually from the plugins page."
+msgstr ""
+
+#. Translators: %s is the error message.
+#: admin-core/ajax/common-settings.php:983
+msgid "Plugin updated but reactivation failed: %s"
+msgstr ""
+
+#. Translators: %s is the new version number.
+#: admin-core/ajax/common-settings.php:999
+msgid "Successfully updated to version %s!"
+msgstr ""
+
+#: admin-core/ajax/common-settings.php:1169
 msgid "Successfully refreshed tokens!"
 msgstr ""
 
-#: admin-core/ajax/common-settings.php:851
+#: admin-core/ajax/common-settings.php:1171
 msgid "Failed to refresh tokens"
 msgstr ""
 
-#: admin-core/ajax/common-settings.php:988
+#: admin-core/ajax/common-settings.php:1308
 msgid "Module not found!"
 msgstr ""
 
 #. Translators: %s is the module name.
-#: admin-core/ajax/common-settings.php:1006
+#: admin-core/ajax/common-settings.php:1326
 msgid "%s disabled!"
 msgstr ""
 
 #. Translators: %s is the module name.
-#: admin-core/ajax/common-settings.php:1016
+#: admin-core/ajax/common-settings.php:1336
 msgid "Unable to disable %s"
 msgstr ""
 
 #. Translators: %s is the module name.
-#: admin-core/ajax/common-settings.php:1028
+#: admin-core/ajax/common-settings.php:1348
 msgid "%s enabled!"
 msgstr ""
 
 #. Translators: %s is the module name.
-#: admin-core/ajax/common-settings.php:1038
+#: admin-core/ajax/common-settings.php:1358
 msgid "Unable to enable %s"
 msgstr ""
 
-#: admin-core/ajax/common-settings.php:1046
+#: admin-core/ajax/common-settings.php:1366
 msgid "Unable to save setting."
 msgstr ""
 
-#: admin-core/ajax/common-settings.php:1065
+#: admin-core/ajax/common-settings.php:1385
 msgid "Unable to verify authenticity."
 msgstr ""
 
@@ -337,7 +400,7 @@ msgstr ""
 
 #: blocks-config/post-timeline/class-uagb-post-timeline.php:545
 #: blocks-config/post/class-uagb-post.php:624
-#: blocks-config/post/class-uagb-post.php:2239
+#: blocks-config/post/class-uagb-post.php:2248
 #: includes/blocks/post-carousel/attributes.php:122
 #: includes/blocks/post-grid/attributes.php:113
 #: includes/blocks/post-masonry/attributes.php:115
@@ -348,6 +411,12 @@ msgstr ""
 
 #: blocks-config/post-timeline/class-uagb-post-timeline.php:907
 msgid "No posts found"
+msgstr ""
+
+#: blocks-config/post-timeline/class-uagb-post-timeline.php:1118
+#: blocks-config/post/class-uagb-post.php:2207
+#: classes/class-uagb-helper.php:1407
+msgid "There is no excerpt because this is a protected post."
 msgstr ""
 
 #: blocks-config/table-of-content/class-uagb-table-of-content.php:703
@@ -7939,7 +8008,7 @@ msgid "Upgrade Now"
 msgstr ""
 
 #: classes/class-uagb-fse-fonts-compatibility.php:165
-#: classes/class-uagb-init-blocks.php:1020
+#: classes/class-uagb-init-blocks.php:1158
 #: dist/blocks.js:11
 #: dist/blocks.js:15
 #: dist/blocks.js:19
@@ -8025,30 +8094,38 @@ msgstr ""
 msgid "Popup Updated"
 msgstr ""
 
-#: classes/class-uagb-init-blocks.php:384
-#: classes/class-uagb-init-blocks.php:531
+#: classes/class-uagb-init-blocks.php:252
+msgid "Sorry, you are not allowed to access popups."
+msgstr ""
+
+#: classes/class-uagb-init-blocks.php:310
+msgid "You do not have permission to view this popup."
+msgstr ""
+
+#: classes/class-uagb-init-blocks.php:522
+#: classes/class-uagb-init-blocks.php:669
 msgid "User is not authenticated!"
 msgstr ""
 
-#: classes/class-uagb-init-blocks.php:518
+#: classes/class-uagb-init-blocks.php:656
 msgid "Please select a valid Gravity Form."
 msgstr ""
 
-#: classes/class-uagb-init-blocks.php:796
+#: classes/class-uagb-init-blocks.php:934
 msgid "Please select a valid Contact Form 7."
 msgstr ""
 
-#: classes/class-uagb-init-blocks.php:821
+#: classes/class-uagb-init-blocks.php:959
 msgid "Extensions"
 msgstr ""
 
-#: classes/class-uagb-init-blocks.php:1122
+#: classes/class-uagb-init-blocks.php:1260
 msgid ""
 "Use custom class added in block's advanced settings to target your desired block. Examples:\n"
 "\t\t.my-class {text-align: center;} // my-class is a custom selector"
 msgstr ""
 
-#: classes/class-uagb-init-blocks.php:1194
+#: classes/class-uagb-init-blocks.php:1332
 #: classes/class-uagb-rest-api.php:318
 #: classes/class-uagb-rest-api.php:333
 #: dist/blocks.js:1
@@ -8059,30 +8136,30 @@ msgstr ""
 msgid "None"
 msgstr ""
 
-#: classes/class-uagb-init-blocks.php:1223
-#: classes/class-uagb-init-blocks.php:1256
+#: classes/class-uagb-init-blocks.php:1361
+#: classes/class-uagb-init-blocks.php:1394
 #: dist/blocks.js:23
 msgid "Select Form"
 msgstr ""
 
-#: classes/class-uagb-init-blocks.php:1237
+#: classes/class-uagb-init-blocks.php:1375
 msgid "You have not added any Contact Form 7 yet."
 msgstr ""
 
-#: classes/class-uagb-init-blocks.php:1270
+#: classes/class-uagb-init-blocks.php:1408
 msgid "You have not added any Gravity Forms yet."
 msgstr ""
 
-#: classes/class-uagb-init-blocks.php:1286
+#: classes/class-uagb-init-blocks.php:1424
 msgid "Invalid request"
 msgstr ""
 
 #. translators: %s: html tags
-#: classes/class-uagb-loader.php:432
+#: classes/class-uagb-loader.php:452
 msgid "The %1$sSpectra%2$s plugin requires %1$sGutenberg%2$s plugin installed & activated."
 msgstr ""
 
-#: classes/class-uagb-loader.php:435
+#: classes/class-uagb-loader.php:455
 msgid "Install Gutenberg"
 msgstr ""
 
@@ -8504,7 +8581,7 @@ msgstr ""
 
 #: includes/blocks/icon-list-child/block.php:14
 #: includes/blocks/icon/block.php:16
-#: lib/bsf-analytics/modules/deactivation-survey/classes/class-deactivation-survey-feedback.php:109
+#: lib/bsf-analytics/modules/deactivation-survey/classes/class-deactivation-survey-feedback.php:112
 #: dist/blocks-placeholder.js:21
 #: dist/blocks.js:11
 #: dist/blocks.js:19
@@ -8959,43 +9036,41 @@ msgstr ""
 msgid "Every %d Minutes"
 msgstr ""
 
-#. translators: %s product name
-#: lib/bsf-analytics/class-bsf-analytics.php:228
-msgid "Want to help make %1s even more awesome? Allow us to collect non-sensitive diagnostic data and usage information. "
+#: lib/bsf-analytics/class-bsf-analytics.php:242
+msgid "Help us improve %1$s and our other products!<br><br>With your permission, we'd like to collect <strong>non-sensitive information</strong> from your website — like your PHP version and which features you use — so we can fix bugs faster, make smarter decisions, and build features that actually matter to you. <em>No personal info. Ever.</em>"
 msgstr ""
 
-#: lib/bsf-analytics/class-bsf-analytics.php:231
+#: lib/bsf-analytics/class-bsf-analytics.php:248
 msgid "This will be applicable for all sites from the network."
 msgstr ""
 
 #. translators: %s usage doc link
-#: lib/bsf-analytics/class-bsf-analytics.php:255
+#: lib/bsf-analytics/class-bsf-analytics.php:272
 msgid " Know More."
 msgstr ""
 
-#: lib/bsf-analytics/class-bsf-analytics.php:265
+#: lib/bsf-analytics/class-bsf-analytics.php:282
 msgid "Yes! Allow it"
 msgstr ""
 
-#: lib/bsf-analytics/class-bsf-analytics.php:276
+#: lib/bsf-analytics/class-bsf-analytics.php:293
 msgid "No Thanks"
 msgstr ""
 
-#: lib/bsf-analytics/class-bsf-analytics.php:387
-#: admin-core/assets/build/dashboard-app.js:14
+#: lib/bsf-analytics/class-bsf-analytics.php:461
 msgid "Usage Tracking"
 msgstr ""
 
 #. translators: %s Product title
-#: lib/bsf-analytics/class-bsf-analytics.php:431
+#: lib/bsf-analytics/class-bsf-analytics.php:506
 msgid "Allow %s products to track non-sensitive usage tracking data."
 msgstr ""
 
-#: lib/bsf-analytics/class-bsf-analytics.php:434
+#: lib/bsf-analytics/class-bsf-analytics.php:509
 msgid " This will be applicable for all sites from the network."
 msgstr ""
 
-#: lib/bsf-analytics/class-bsf-analytics.php:439
+#: lib/bsf-analytics/class-bsf-analytics.php:514
 msgid "Learn More."
 msgstr ""
 
@@ -9011,57 +9086,57 @@ msgstr ""
 msgid "If you have a moment, please share why you are deactivating the plugin."
 msgstr ""
 
-#: lib/bsf-analytics/modules/deactivation-survey/classes/class-deactivation-survey-feedback.php:134
-#: lib/bsf-analytics/modules/deactivation-survey/classes/class-deactivation-survey-feedback.php:309
+#: lib/bsf-analytics/modules/deactivation-survey/classes/class-deactivation-survey-feedback.php:139
+#: lib/bsf-analytics/modules/deactivation-survey/classes/class-deactivation-survey-feedback.php:314
 msgid "Please tell us more details."
 msgstr ""
 
 #. translators: %1$s: link html start, %2$s: link html end
-#: lib/bsf-analytics/modules/deactivation-survey/classes/class-deactivation-survey-feedback.php:143
+#: lib/bsf-analytics/modules/deactivation-survey/classes/class-deactivation-survey-feedback.php:148
 msgid "Need help from our experts? %1$sClick here to contact us.%2$s"
 msgstr ""
 
-#: lib/bsf-analytics/modules/deactivation-survey/classes/class-deactivation-survey-feedback.php:154
+#: lib/bsf-analytics/modules/deactivation-survey/classes/class-deactivation-survey-feedback.php:159
 msgid "Submit & Deactivate"
 msgstr ""
 
-#: lib/bsf-analytics/modules/deactivation-survey/classes/class-deactivation-survey-feedback.php:155
+#: lib/bsf-analytics/modules/deactivation-survey/classes/class-deactivation-survey-feedback.php:160
 msgid "Skip & Deactivate"
 msgstr ""
 
-#: lib/bsf-analytics/modules/deactivation-survey/classes/class-deactivation-survey-feedback.php:284
+#: lib/bsf-analytics/modules/deactivation-survey/classes/class-deactivation-survey-feedback.php:289
 msgid "This is a temporary deactivation for testing."
 msgstr ""
 
-#: lib/bsf-analytics/modules/deactivation-survey/classes/class-deactivation-survey-feedback.php:285
+#: lib/bsf-analytics/modules/deactivation-survey/classes/class-deactivation-survey-feedback.php:290
 msgid "How can we assist you?"
 msgstr ""
 
-#: lib/bsf-analytics/modules/deactivation-survey/classes/class-deactivation-survey-feedback.php:290
+#: lib/bsf-analytics/modules/deactivation-survey/classes/class-deactivation-survey-feedback.php:295
 msgid "The plugin isn't working properly."
 msgstr ""
 
-#: lib/bsf-analytics/modules/deactivation-survey/classes/class-deactivation-survey-feedback.php:291
+#: lib/bsf-analytics/modules/deactivation-survey/classes/class-deactivation-survey-feedback.php:296
 msgid "Please tell us more about what went wrong?"
 msgstr ""
 
-#: lib/bsf-analytics/modules/deactivation-survey/classes/class-deactivation-survey-feedback.php:296
+#: lib/bsf-analytics/modules/deactivation-survey/classes/class-deactivation-survey-feedback.php:301
 msgid "I found a better alternative plugin."
 msgstr ""
 
-#: lib/bsf-analytics/modules/deactivation-survey/classes/class-deactivation-survey-feedback.php:297
+#: lib/bsf-analytics/modules/deactivation-survey/classes/class-deactivation-survey-feedback.php:302
 msgid "Could you please specify which plugin?"
 msgstr ""
 
-#: lib/bsf-analytics/modules/deactivation-survey/classes/class-deactivation-survey-feedback.php:302
+#: lib/bsf-analytics/modules/deactivation-survey/classes/class-deactivation-survey-feedback.php:307
 msgid "It's missing a specific feature."
 msgstr ""
 
-#: lib/bsf-analytics/modules/deactivation-survey/classes/class-deactivation-survey-feedback.php:303
+#: lib/bsf-analytics/modules/deactivation-survey/classes/class-deactivation-survey-feedback.php:308
 msgid "Please tell us more about the feature."
 msgstr ""
 
-#: lib/bsf-analytics/modules/deactivation-survey/classes/class-deactivation-survey-feedback.php:308
+#: lib/bsf-analytics/modules/deactivation-survey/classes/class-deactivation-survey-feedback.php:313
 #: dist/blocks.js:11
 msgid "Other"
 msgstr ""
@@ -9085,7 +9160,7 @@ msgstr ""
 #: lib/gutenberg-templates/inc/api/settings.php:92
 #: lib/gutenberg-templates/inc/api/sites.php:70
 #: lib/gutenberg-templates/inc/classes/ast-block-templates-zipwp-api.php:77
-#: lib/nps-survey/classes/nps-survey-script.php:248
+#: lib/nps-survey/classes/nps-survey-script.php:254
 #: lib/zipwp-images/classes/zipwp-images-api.php:91
 msgid "Sorry, you are not allowed to do that."
 msgstr ""
@@ -9102,8 +9177,8 @@ msgstr ""
 #: lib/gutenberg-templates/inc/api/sites.php:93
 #: lib/gutenberg-templates/inc/classes/ast-block-templates-zipwp-api.php:138
 #: lib/gutenberg-templates/inc/classes/ast-block-templates-zipwp-api.php:197
-#: lib/nps-survey/classes/nps-survey-script.php:270
-#: lib/nps-survey/classes/nps-survey-script.php:376
+#: lib/nps-survey/classes/nps-survey-script.php:276
+#: lib/nps-survey/classes/nps-survey-script.php:382
 #: lib/zipwp-images/classes/zipwp-images-api.php:167
 msgid "Nonce verification failed."
 msgstr ""
@@ -9154,7 +9229,7 @@ msgstr ""
 #: lib/gutenberg-templates/inc/importer/plugin.php:270
 #: lib/gutenberg-templates/inc/importer/plugin.php:274
 #: lib/gutenberg-templates/inc/importer/plugin.php:445
-#: lib/zip-ai/classes/sidebar-configurations.php:268
+#: lib/zip-ai/classes/sidebar-configurations.php:270
 msgid "Something went wrong"
 msgstr ""
 
@@ -9172,12 +9247,12 @@ msgid "Invalid Request URL - %s"
 msgstr ""
 
 #: lib/gutenberg-templates/inc/traits/helper.php:225
-#: lib/zip-ai/classes/helper.php:151
+#: lib/zip-ai/classes/helper.php:135
 msgid "The Zip AI Endpoint was not declared"
 msgstr ""
 
 #: lib/gutenberg-templates/inc/traits/helper.php:235
-#: lib/zip-ai/classes/helper.php:161
+#: lib/zip-ai/classes/helper.php:145
 msgid "The Zip AI Auth Token is not set."
 msgstr ""
 
@@ -9194,35 +9269,35 @@ msgstr ""
 msgid "Thank you for using %1$sZip AI.%2$s"
 msgstr ""
 
-#: lib/zip-ai/classes/helper.php:195
+#: lib/zip-ai/classes/helper.php:179
 msgid "Empty response from API."
 msgstr ""
 
-#: lib/zip-ai/classes/helper.php:196
+#: lib/zip-ai/classes/helper.php:180
 msgid "empty_response"
 msgstr ""
 
-#: lib/zip-ai/classes/helper.php:216
+#: lib/zip-ai/classes/helper.php:200
 msgid "You do not have permission to perform this action."
 msgstr ""
 
-#: lib/zip-ai/classes/helper.php:227
+#: lib/zip-ai/classes/helper.php:211
 msgid "Encountered an error while processing your request. Please try again."
 msgstr ""
 
-#: lib/zip-ai/classes/helper.php:251
+#: lib/zip-ai/classes/helper.php:235
 msgid "The ZipWP Endpoint was not declared"
 msgstr ""
 
-#: lib/zip-ai/classes/helper.php:261
+#: lib/zip-ai/classes/helper.php:245
 msgid "The ZipWP Token is not set."
 msgstr ""
 
-#: lib/zip-ai/classes/helper.php:285
+#: lib/zip-ai/classes/helper.php:269
 msgid "The ZipWP API server is not responding."
 msgstr ""
 
-#: lib/zip-ai/classes/helper.php:295
+#: lib/zip-ai/classes/helper.php:279
 msgid "The ZipWP API server encountered an error."
 msgstr ""
 
@@ -9230,19 +9305,19 @@ msgstr ""
 msgid "The message array was not supplied"
 msgstr ""
 
-#: lib/zip-ai/classes/sidebar-configurations.php:285
+#: lib/zip-ai/classes/sidebar-configurations.php:287
 msgid "Authentication failed. Invalid or missing bearer token."
 msgstr ""
 
-#: lib/zip-ai/classes/sidebar-configurations.php:287
+#: lib/zip-ai/classes/sidebar-configurations.php:289
 msgid "You've run out of credits."
 msgstr ""
 
-#: lib/zip-ai/classes/sidebar-configurations.php:289
+#: lib/zip-ai/classes/sidebar-configurations.php:291
 msgid "To continue using the assistant and access its full features, please purchase more credits."
 msgstr ""
 
-#: lib/zip-ai/classes/sidebar-configurations.php:291
+#: lib/zip-ai/classes/sidebar-configurations.php:293
 msgid "Buy more credits"
 msgstr ""
 
@@ -9585,6 +9660,82 @@ msgid "Open a ticket"
 msgstr ""
 
 #: admin-core/assets/build/dashboard-app.js:4
+msgid "Spectra Beta is Here!"
+msgstr ""
+
+#: admin-core/assets/build/dashboard-app.js:4
+msgid "New Beta Version"
+msgstr ""
+
+#: admin-core/assets/build/dashboard-app.js:4
+msgid "Current Version: "
+msgstr ""
+
+#: admin-core/assets/build/dashboard-app.js:4
+msgid "Be among the first to explore what's next and share your thoughts to help us make it even better!"
+msgstr ""
+
+#: admin-core/assets/build/dashboard-app.js:4
+msgid "Important:"
+msgstr ""
+
+#: admin-core/assets/build/dashboard-app.js:4
+msgid "Spectra v3 is still in Beta and should not be used on live sites yet."
+msgstr ""
+
+#: admin-core/assets/build/dashboard-app.js:4
+#: admin-core/assets/build/dashboard-app.js:7
+msgid "Updating…"
+msgstr ""
+
+#: admin-core/assets/build/dashboard-app.js:4
+msgid "Try It Now"
+msgstr ""
+
+#: admin-core/assets/build/dashboard-app.js:4
+#: admin-core/assets/build/dashboard-app.js:7
+msgid "Update to Beta Version"
+msgstr ""
+
+#: admin-core/assets/build/dashboard-app.js:4
+#: admin-core/assets/build/dashboard-app.js:7
+msgid "This is a beta version and not recommended for live sites. It is recommended to test on a staging or test environment only."
+msgstr ""
+
+#: admin-core/assets/build/dashboard-app.js:4
+#: admin-core/assets/build/dashboard-app.js:7
+#: admin-core/assets/build/dashboard-app.js:9
+#: admin-core/assets/build/dashboard-app.js:16
+#: admin-core/assets/build/dashboard-app.js:18
+#: dist/blocks.js:11
+#: dist/blocks.js:19
+#: dist/blocks.js:23
+#: lib/zip-ai/admin/dashboard-app/build/dashboard-app.js:3
+#: lib/zip-ai/sidebar/build/sidebar-app.js:3
+msgid "Cancel"
+msgstr ""
+
+#: admin-core/assets/build/dashboard-app.js:4
+#: admin-core/assets/build/dashboard-app.js:7
+msgid "Plugin updated successfully!"
+msgstr ""
+
+#: admin-core/assets/build/dashboard-app.js:4
+#: admin-core/assets/build/dashboard-app.js:7
+msgid "Unable to update. Please try again."
+msgstr ""
+
+#: admin-core/assets/build/dashboard-app.js:4
+msgid "Unable to enable beta updates. Please try again."
+msgstr ""
+
+#: admin-core/assets/build/dashboard-app.js:4
+#: admin-core/assets/build/dashboard-app.js:7
+#: lib/zip-ai/sidebar/build/sidebar-app.js:3
+msgid "Update"
+msgstr ""
+
+#: admin-core/assets/build/dashboard-app.js:4
 msgid "Dynamic content"
 msgstr ""
 
@@ -9677,19 +9828,6 @@ msgid "Regenerate"
 msgstr ""
 
 #: admin-core/assets/build/dashboard-app.js:4
-#: admin-core/assets/build/dashboard-app.js:7
-#: admin-core/assets/build/dashboard-app.js:9
-#: admin-core/assets/build/dashboard-app.js:16
-#: admin-core/assets/build/dashboard-app.js:18
-#: dist/blocks.js:11
-#: dist/blocks.js:19
-#: dist/blocks.js:23
-#: lib/zip-ai/admin/dashboard-app/build/dashboard-app.js:3
-#: lib/zip-ai/sidebar/build/sidebar-app.js:3
-msgid "Cancel"
-msgstr ""
-
-#: admin-core/assets/build/dashboard-app.js:4
 #: dist/blocks.js:23
 msgid "Custom CSS"
 msgstr ""
@@ -9714,6 +9852,38 @@ msgstr ""
 
 #: admin-core/assets/build/dashboard-app.js:7
 msgid "Enable this option to turn on beta updates and be notified when a new beta version of Spectra is available. The beta version will not install automatically, you will have to install it when you get a notification. It is recommended to try beta on a test environment only."
+msgstr ""
+
+#: admin-core/assets/build/dashboard-app.js:7
+msgid "Unable to save settings. Please try again."
+msgstr ""
+
+#: admin-core/assets/build/dashboard-app.js:7
+msgid "Checking for beta updates…"
+msgstr ""
+
+#: admin-core/assets/build/dashboard-app.js:7
+msgid "Unable to check for updates. Please try again."
+msgstr ""
+
+#: admin-core/assets/build/dashboard-app.js:7
+msgid "Retry"
+msgstr ""
+
+#: admin-core/assets/build/dashboard-app.js:7
+msgid "Beta Update Available!"
+msgstr ""
+
+#: admin-core/assets/build/dashboard-app.js:7
+msgid "A new beta version is available."
+msgstr ""
+
+#: admin-core/assets/build/dashboard-app.js:7
+msgid "Update Now"
+msgstr ""
+
+#: admin-core/assets/build/dashboard-app.js:7
+msgid "Check Again"
 msgstr ""
 
 #: admin-core/assets/build/dashboard-app.js:7
@@ -10090,17 +10260,15 @@ msgid "Enable the \"Inherit From Theme\" option to make all buttons in Spectra b
 msgstr ""
 
 #: admin-core/assets/build/dashboard-app.js:14
-msgid "Help us improve Spectra by allowing non-sensitive usage tracking. "
+msgid "Contribute to Spectra"
 msgstr ""
 
 #: admin-core/assets/build/dashboard-app.js:14
-#: dist/blocks.js:11
-#: lib/zip-ai/sidebar/build/sidebar-app.js:11
-msgid "Learn more"
+msgid "Collect non-sensitive information from your website, such as the PHP version and features used, to help us fix bugs faster, make smarter decisions, and build features that actually matter to you. Please read "
 msgstr ""
 
 #: admin-core/assets/build/dashboard-app.js:14
-msgid " about what we track."
+msgid "more about what we track."
 msgstr ""
 
 #: admin-core/assets/build/dashboard-app.js:14
@@ -10382,6 +10550,14 @@ msgid "This setting allows you to enabled or disable the AI features on your web
 msgstr ""
 
 #: admin-core/assets/build/dashboard-app.js:17
+msgid "Refresh credit details"
+msgstr ""
+
+#: admin-core/assets/build/dashboard-app.js:17
+msgid "Refresh Credits"
+msgstr ""
+
+#: admin-core/assets/build/dashboard-app.js:17
 #: lib/zip-ai/sidebar/build/sidebar-app.js:11
 msgid "Get More Credits"
 msgstr ""
@@ -10402,7 +10578,7 @@ msgid "AI Assistant"
 msgstr ""
 
 #: admin-core/assets/build/dashboard-app.js:17
-msgid "It’s like ChatGPT but for WordPress, designed to revolutionize your WordPress experience."
+msgid "It's like ChatGPT but for WordPress, designed to revolutionize your WordPress experience."
 msgstr ""
 
 #: admin-core/assets/build/dashboard-app.js:17
@@ -10903,18 +11079,22 @@ msgid "Summary"
 msgstr ""
 
 #: dist/blocks.js:3
+#: dist/blocks.js:19
 msgid "List Of Features:"
 msgstr ""
 
 #: dist/blocks.js:3
+#: dist/blocks.js:19
 msgid "Average Ratings"
 msgstr ""
 
 #: dist/blocks.js:3
+#: dist/blocks.js:19
 msgid "Instock"
 msgstr ""
 
 #: dist/blocks.js:3
+#: dist/blocks.js:19
 msgid "Availability"
 msgstr ""
 
@@ -11850,6 +12030,11 @@ msgstr ""
 
 #: dist/blocks.js:11
 msgid "Unique navigation slugs"
+msgstr ""
+
+#: dist/blocks.js:11
+#: lib/zip-ai/sidebar/build/sidebar-app.js:11
+msgid "Learn more"
 msgstr ""
 
 #: dist/blocks.js:11
@@ -15531,15 +15716,7 @@ msgid "notice"
 msgstr ""
 
 #: dist/blocks.js:19
-msgid "Note: You can see sample Lottie animations "
-msgstr ""
-
-#: dist/blocks.js:19
-msgid "here on this"
-msgstr ""
-
-#: dist/blocks.js:19
-msgid " website."
+msgid "<span>Note: You can see sample Lottie animations <a>here on this</a> website.</span>"
 msgstr ""
 
 #: dist/blocks.js:19
@@ -16051,13 +16228,7 @@ msgid "post"
 msgstr ""
 
 #: dist/blocks.js:19
-#: dist/blocks.js:23
-msgid "Note: Enabling this will disable the Pagination. Setting the offset parameter overrides/ignores the paged parameter and breaks pagination. "
-msgstr ""
-
-#: dist/blocks.js:19
-#: dist/blocks.js:23
-msgid "Read more"
+msgid "<span>Note: Enabling this will disable the Pagination. Setting the offset parameter overrides/ignores the paged parameter and breaks pagination.</span> <a>Read more</a>"
 msgstr ""
 
 #: dist/blocks.js:19
@@ -18012,6 +18183,14 @@ msgid "Showing All Post Masonry Layout."
 msgstr ""
 
 #: dist/blocks.js:23
+msgid "Note: Enabling this will disable the Pagination. Setting the offset parameter overrides/ignores the paged parameter and breaks pagination. "
+msgstr ""
+
+#: dist/blocks.js:23
+msgid "Read more"
+msgstr ""
+
+#: dist/blocks.js:23
 msgid "Infinite Load Event"
 msgstr ""
 
@@ -18388,10 +18567,6 @@ msgstr ""
 
 #: lib/zip-ai/sidebar/build/sidebar-app.js:3
 msgid "Note: All subsequent messages will be deleted after you update."
-msgstr ""
-
-#: lib/zip-ai/sidebar/build/sidebar-app.js:3
-msgid "Update"
 msgstr ""
 
 #: lib/zip-ai/sidebar/build/sidebar-app.js:3
