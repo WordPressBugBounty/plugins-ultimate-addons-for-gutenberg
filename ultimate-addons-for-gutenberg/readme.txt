@@ -5,7 +5,7 @@ Tags: gutenberg, blocks, gutenberg blocks, editor, block
 Requires at least: 5.6
 Requires PHP: 7.4
 Tested up to: 6.9
-Stable tag: 2.19.21
+Stable tag: 2.19.22
 Beta tag: 3.0.0-beta.2
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -228,8 +228,13 @@ Our external packages use [Rating Star Component](https://github.com/n49/react-s
 
 == Changelog ==
 
+= 2.19.22 - Monday, 31st March 2026 =
+* Improvement: Enhanced usage analytics for better product insights.
+* Fix: Image Gallery - Resolved caption visibility issue on iPad/touch devices.
+* Fix: Image Gallery - Removed extra spacing in carousel mode with single image.
+
 = 2.19.21 - Thursday, 12th March 2026 =
-* Security: Fixed a security issue.
+* This update addressed a security bug. Please make sure you are using the latest version on your website.
 * Fix: WPML - Resolved translation issues for Tabs, Modal, and Image Gallery blocks.
 * Fix: Global - Block CSS not generated when blocks are placed inside SureCart template parts on classic themes.
 
