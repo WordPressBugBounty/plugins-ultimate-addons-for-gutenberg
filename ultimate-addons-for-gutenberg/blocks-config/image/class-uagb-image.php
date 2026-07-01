@@ -43,6 +43,7 @@ if ( ! class_exists( 'UAGB_Image' ) ) {
 		 */
 		public function __construct() {
 			add_action( 'init', array( $this, 'register_blocks' ) );
+			add_filter( 'render_block_uagb/image', array( $this, 'sanitize_block_output' ) );
 		}
 
 		/**
@@ -68,6 +69,21 @@ if ( ! class_exists( 'UAGB_Image' ) ) {
 					),
 				)
 			);
+		}
+
+		/**
+		 * Sanitize the rendered block output to strip any injected event handlers.
+		 *
+		 * Runs wp_kses_post() on the final HTML so malicious attributes (onload,
+		 * onfocus, etc.) injected via crafted block markup in the Code Editor cannot
+		 * reach the frontend, regardless of how they survived post-save filtering.
+		 *
+		 * @since x.x.x
+		 * @param string $block_content Rendered block HTML.
+		 * @return string Sanitized HTML.
+		 */
+		public function sanitize_block_output( $block_content ) {
+			return wp_kses_post( $block_content );
 		}
 	}
 

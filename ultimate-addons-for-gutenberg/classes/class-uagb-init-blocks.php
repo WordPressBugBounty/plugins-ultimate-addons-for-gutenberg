@@ -84,6 +84,12 @@ class UAGB_Init_Blocks {
 			add_filter( 'render_block', array( $this, 'add_gbs_class' ), 10, 2 );
 		}
 
+		// uagb/container stores `layout` as a bare string ("flex"/"grid"). WP core's
+		// wp_add_parent_layout_to_parsed_block() (priority 10) propagates it to child
+		// blocks as parentLayout, then layout.php:600 calls array_intersect_key() on it
+		// and fatals. Runs at priority 11 to normalise after WP core sets parentLayout.
+		add_filter( 'render_block_data', array( $this, 'fix_non_array_parent_layout' ), 11 );
+
 		if ( current_user_can( 'edit_posts' ) ) {
 			add_action( 'wp_ajax_uagb_svg_confirmation', array( $this, 'confirm_svg_upload' ) );
 		}
@@ -318,6 +324,24 @@ class UAGB_Init_Blocks {
 		}
 
 		return $response;
+	}
+
+	/**
+	 * Prevent a PHP fatal when uagb/container's string `layout` attribute is
+	 * propagated to child blocks as parentLayout by WP core. Core's layout.php
+	 * calls array_intersect_key() on parentLayout and expects an array; if it
+	 * receives a string the call fatals. We unset parentLayout on any block
+	 * where it is not an array so core's layout support degrades gracefully.
+	 *
+	 * @param array $parsed_block The parsed block data from render_block_data.
+	 * @since x.x.x
+	 * @return array The parsed block data with parentLayout normalised.
+	 */
+	public function fix_non_array_parent_layout( $parsed_block ) {
+		if ( isset( $parsed_block['parentLayout'] ) && ! is_array( $parsed_block['parentLayout'] ) ) {
+			unset( $parsed_block['parentLayout'] );
+		}
+		return $parsed_block;
 	}
 
 	/**

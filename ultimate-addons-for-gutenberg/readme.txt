@@ -5,7 +5,7 @@ Tags: gutenberg, blocks, gutenberg blocks, editor, block
 Requires at least: 5.6
 Requires PHP: 7.4
 Tested up to: 7.0
-Stable tag: 2.19.28
+Stable tag: 2.19.29
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -226,6 +226,11 @@ You can report the issue through our [Bug Bounty Program](https://brainstormforc
 Our external packages use [Rating Star Component](https://github.com/n49/react-stars) that are distributed under the terms of the ISC. While [Slick](https://github.com/akiran/react-slick), [Lottie](https://github.com/chenqingspring/react-lottie) and [Striptags](https://github.com/ericnorris/striptags) is distributed under the terms of the MIT. Additionally, we incorporate [FontAwesome v6](https://fontawesome.com/license/free) under the CC BY 4.0 License, and [dnd kit](https://github.com/clauderic/dnd-kit) licensed under the MIT License.
 
 == Changelog ==
+
+= 2.19.29 - Monday, 30th June 2026 =
+* Fix: This update addressed a security bug. Props to Wordfence for reporting it responsibly to our team. Please make sure you are using the latest version on your website.
+* Fix: WPML compatibility — resolved PHP error caused by non-array parentLayout in container blocks.
+* Fix: Resolved PHP errors on the Settings → Reading screen under block themes and in background position output for the Slider, Modal, Popup Builder, and Forms blocks.
 
 = 2.19.28 - Wednesday, 27th May 2026 =
 * Fix: FAQ — Existing FAQ blocks created before the apiVersion 3 update now validate correctly in the editor.
