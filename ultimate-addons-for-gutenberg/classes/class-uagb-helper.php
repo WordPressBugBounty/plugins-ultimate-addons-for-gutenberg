@@ -228,16 +228,16 @@ if ( ! class_exists( 'UAGB_Helper' ) ) {
 
 					if ( ! empty( $val ) || ( empty( $val ) && 'content' === $j ) || 0 === $val ) {
 						if ( 'font-family' === $j ) {
-							$css .= $j . ': "' . $val . '";';
+							$css .= $j . ': "' . self::sanitize_css_value( $val ) . '";';
 						} else {
 							if ( is_array( $val ) ) {
 								// Convert $val array property to string.
 								foreach ( $val as $index => $property ) {
 									$properties = is_string( $property ) ? $property : (string) $property;
-									$css       .= $j . ': ' . $properties . ';';
+									$css       .= $j . ': ' . self::sanitize_css_value( $properties ) . ';';
 								}
 							} else {
-								$css .= $j . ': ' . $val . ';';
+								$css .= $j . ': ' . self::sanitize_css_value( $val ) . ';';
 							}
 						}
 					}
@@ -251,6 +251,24 @@ if ( ! class_exists( 'UAGB_Helper' ) ) {
 			}
 
 			return $styling_css;
+		}
+
+		/**
+		 * Sanitize a CSS property value to prevent rule injection.
+		 *
+		 * Strips characters that can break out of a CSS declaration block
+		 * ({ } ;) and HTML angle brackets that could be used for injection.
+		 * Applied centrally so every block style attribute is covered.
+		 *
+		 * @since x.x.x
+		 * @param mixed $value Raw CSS value from block attributes.
+		 * @return mixed Sanitized value (string stripped; non-strings returned as-is).
+		 */
+		public static function sanitize_css_value( $value ) {
+			if ( ! is_string( $value ) ) {
+				return $value;
+			}
+			return str_replace( array( '{', '}', ';', '<', '>' ), '', $value );
 		}
 
 		/**

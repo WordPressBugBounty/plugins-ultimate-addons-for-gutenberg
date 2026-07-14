@@ -82,6 +82,9 @@ class UAGB_Init_Blocks {
 
 			// For Spectra Global Block Styles.
 			add_filter( 'render_block', array( $this, 'add_gbs_class' ), 10, 2 );
+
+			// Re-apply Info Box root props for content saved during the apiVersion 3 transition (2.19.27 - 2.19.28).
+			add_filter( 'render_block', array( $this, 'info_box_apiversion_compat' ), 10, 2 );
 		}
 
 		// uagb/container stores `layout` as a bare string ("flex"/"grid"). WP core's
@@ -980,7 +983,7 @@ class UAGB_Init_Blocks {
 			array(
 				array(
 					'slug'  => 'uagb',
-					'title' => __( 'Spectra', 'ultimate-addons-for-gutenberg' ),
+					'title' => __( 'Spectra Legacy', 'ultimate-addons-for-gutenberg' ),
 				),
 			),
 			$categories
@@ -1556,6 +1559,86 @@ class UAGB_Init_Blocks {
 		$html               = str_replace( $block_id, $replacement_string, $block_content );
 
 		return $html;
+	}
+
+	/**
+	 * Re-apply Info Box root element props on the frontend.
+	 *
+	 * Info Box moved to apiVersion 3 in 2.19.27, but its save() did not call
+	 * useBlockProps.save() until a later release. For apiVersion 2+ blocks
+	 * WordPress only applies the block-supports and `blocks.getSaveContent.extraProps`
+	 * props (generated class, custom className, anchor id, uag-hide-* classes)
+	 * through useBlockProps.save(), so Info Box content saved in between is
+	 * missing them on the root element. This re-applies those props from the
+	 * stored attributes at render time, so existing content is corrected on the
+	 * frontend without requiring a re-save. New saves already contain them and
+	 * re-applying is idempotent.
+	 *
+	 * @param mixed                $block_content The block default content.
+	 * @param array<string, mixed> $block         The full block, including name and attributes.
+	 *
+	 * @since 2.19.29
+	 * @return mixed The filtered block content.
+	 */
+	public function info_box_apiversion_compat( $block_content, $block ) {
+		if (
+			empty( $block['blockName'] ) ||
+			'uagb/info-box' !== $block['blockName'] ||
+			! is_string( $block_content ) ||
+			'' === trim( $block_content ) ||
+			! class_exists( 'WP_HTML_Tag_Processor' )
+		) {
+			return $block_content;
+		}
+
+		$attrs     = isset( $block['attrs'] ) && is_array( $block['attrs'] ) ? $block['attrs'] : array();
+		$processor = new WP_HTML_Tag_Processor( $block_content );
+
+		// Bail if the markup has no root tag to update.
+		if ( ! $processor->next_tag() ) {
+			return $block_content;
+		}
+
+		// Generated block class (WordPress adds this automatically only for apiVersion 1 blocks).
+		$processor->add_class( 'wp-block-uagb-info-box' );
+
+		// Additional CSS Class(es).
+		if ( ! empty( $attrs['className'] ) && is_string( $attrs['className'] ) ) {
+			$class_names = preg_split( '/\s+/', trim( $attrs['className'] ) );
+
+			if ( is_array( $class_names ) ) {
+				foreach ( $class_names as $class_name ) {
+					if ( '' !== $class_name ) {
+						$processor->add_class( $class_name );
+					}
+				}
+			}
+		}
+
+		// HTML Anchor.
+		if ( ! empty( $attrs['anchor'] ) && is_string( $attrs['anchor'] ) ) {
+			$processor->set_attribute( 'id', $attrs['anchor'] );
+		}
+
+		// Responsive-visibility classes (mirrors ApplyExtraClass in the advanced-settings extension).
+		$display_conditions   = isset( $attrs['UAGDisplayConditions'] ) ? $attrs['UAGDisplayConditions'] : '';
+		$responsive_condition = ! empty( $attrs['UAGResponsiveConditions'] );
+
+		if ( 'responsiveVisibility' === $display_conditions || $responsive_condition ) {
+			if ( ! empty( $attrs['UAGHideDesktop'] ) ) {
+				$processor->add_class( 'uag-hide-desktop' );
+			}
+
+			if ( ! empty( $attrs['UAGHideTab'] ) ) {
+				$processor->add_class( 'uag-hide-tab' );
+			}
+
+			if ( ! empty( $attrs['UAGHideMob'] ) ) {
+				$processor->add_class( 'uag-hide-mob' );
+			}
+		}
+
+		return $processor->get_updated_html();
 	}
 
 	/**
